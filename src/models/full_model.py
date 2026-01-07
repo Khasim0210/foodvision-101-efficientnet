@@ -17,7 +17,7 @@ def build_foodvision_model(
     """
     inputs = layers.Input(shape=input_shape)
 
-    base_model = build_efficientnet_base(..., weights="imagenet")
+    base_model = build_efficientnet_base(input_shape=(224, 224, 3), weights="imagenet")
 
     x = base_model(inputs, training=False)  # keep BN layers in inference mode while frozen
 
